@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-size: 15px;font-family: Roboto, Arial, sans-serif;">
+    <div id="ul">
+        <div class="li"><img src="./assets/img/blue-youtube-logo-png-4.png" alt="logo" class="logo" id="youtube-logo"></div>
+        <div class="li-search" class="searchDiv">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Search For Video" id="searchBox">
+                <button type="submit" class="searchButton" id="searchButton" onclick="searchBoxSubmit()"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="li" class="epam-logo-div"><img src="./assets/img/epam-systems-logo.jpg" alt="logo" class="logo" id="epam-logo"></div>
+    </div>
+
+    <div id="displayAllVid" style="display:flex; flex-wrap: wrap;">
+
+    </div>
+    <div id="prevNextBtn">
+        <button class="previousButton" id="previousButton" onclick="previousResultSet()">Previous</button>
+        <button class="nextButton" id="nextButton" onclick="nextResultSet()">Next</button>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
