@@ -43,7 +43,7 @@ let firstCall = 0;
     epamLogo.setAttribute("class", "li");
     epamLogo.setAttribute("id", "epam-logo-div");
     let epamLogoImage = document.createElement("img");
-    epamLogoImage.setAttribute("src", "../assets/img/epam-systems-logo.jpg");
+    epamLogoImage.setAttribute("src", "./assets/img/epam-systems-logo.jpg");
     epamLogoImage.setAttribute("class", "logo");
     epamLogoImage.setAttribute("id", "epam-logo");
     epamLogo.append(epamLogoImage);
