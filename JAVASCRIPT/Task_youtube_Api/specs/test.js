@@ -1,4 +1,4 @@
-function displayData(data) {
+function displayDataTest(data) {
     count = 0;
     RemovePreviousSearchResult();
     data.items.forEach(element => {
@@ -8,6 +8,6 @@ function displayData(data) {
 }
 describe('Test for display of data', () => {
     it('displays 5 records', () => {
-        expect(displayData({ items: [{}, {}, {}, {}, {}] })).toBe(5);
+        expect(displayDataTest({ items: [{}, {}, {}, {}, {}] })).toBe(5);
     })
 })
