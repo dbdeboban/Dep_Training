@@ -3,10 +3,9 @@
 
 
 function add(n) {
-    var adder = function(x) {
+    var adder = (x) => {
         return add(n + x)
     };
-    adder.toString = function() { return n; }
-
+    adder.toString = () => n;
     return adder;
 }

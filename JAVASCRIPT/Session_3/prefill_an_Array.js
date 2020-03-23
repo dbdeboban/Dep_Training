@@ -11,7 +11,6 @@ function prefill(n, v) {
     } else if (n == 0) {
         return [];
     } else {
-
         return Array(n).fill(v)
     }
 }
