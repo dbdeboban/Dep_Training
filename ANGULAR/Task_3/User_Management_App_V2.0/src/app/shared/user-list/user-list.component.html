@@ -1,0 +1,4 @@
+<div *ngFor="let user of (userList | async)">
+    <app-user [user] = "user" [route]="route" *ngIf="(route === 'active' && !user.isDeleted)||(route === 'deleted' && user.isDeleted)||(route == 'manage')"></app-user>
+</div>
+

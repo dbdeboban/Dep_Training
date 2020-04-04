@@ -1,0 +1,14 @@
+<div class="manage">
+  <div class="createButton">
+    <button class="createUser btn btn-success" (click)="showCreteForm()">Create</button>
+  </div>
+  <div class="row">
+    <div class="col col-sm-6 col-md-6">
+      <app-user-list [route]="routeSnap"></app-user-list>
+    </div>
+    <div class="col col-sm-6 col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+</div>

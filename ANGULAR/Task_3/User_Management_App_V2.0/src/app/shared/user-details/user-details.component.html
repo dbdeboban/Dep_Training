@@ -1,0 +1,24 @@
+<div class="user-details-div" *ngIf="user | json">
+    <div class="user-name">{{user | fullName }}</div>
+    <div [ngStyle]="{'color': user.isDeleted?'red':'rgb(0, 214, 0)' }">{{user | status}}</div>
+    <div class="login row">
+        <div class="label col">Login-ID: </div>
+        <div class="data col">{{user.login}}</div>
+    </div>
+    <div class="fname row">
+        <div class="label col">First Name: </div>
+        <div class="data col"> {{user.firstName}}</div>
+    </div>
+    <div class="lname row">
+        <div class="label col">Last Name: </div>
+        <div class="data col">{{user.lastName}}</div>
+    </div>
+    <div class="age row">
+        <div class="label col">Age:</div>
+        <div class="data col">{{user.age}}</div>
+    </div>
+    <div class="lastUpdate row font-italic">
+        <div class="label col ">Last Updated:</div>
+        <div class="data col">{{user.updatedAt | date:'mediumDate'}}</div>
+    </div>
+</div>
