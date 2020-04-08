@@ -6,7 +6,7 @@ Object.prototype.hash = function(string) {
     var obj = this;
 
     for (i = 0; i < prop_list.length; i++) {
-        if (obj[prop_list[i]] != undefined) {
+        if (obj[prop_list[i]]) {
             obj = obj[prop_list[i]];
         } else {
             return undefined;

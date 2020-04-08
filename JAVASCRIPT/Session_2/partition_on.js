@@ -5,19 +5,19 @@
 function partitionOn(pred, items) {
     var trueArr = [];
     var falseArr = [];
-    for (i in items) {
+    for (item in items) {
         if (pred(items[i])) {
-            trueArr.push(items[i]);
+            trueArr.push(items[item]);
         } else {
-            falseArr.push(items[i]);
+            falseArr.push(items[item]);
         }
     }
     items.length = 0;
-    for (i in falseArr) {
-        items.push(falseArr[i]);
+    for (item in falseArr) {
+        items.push(falseArr[item]);
     }
-    for (i in trueArr) {
-        items.push(trueArr[i]);
+    for (item in trueArr) {
+        items.push(trueArr[item]);
     }
     return falseArr.length;
 }

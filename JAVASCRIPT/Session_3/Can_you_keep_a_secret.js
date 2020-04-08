@@ -7,7 +7,7 @@ function createSecretHolder(secret) {
             return secret;
         },
         setSecret: function(v) {
-            secret = v
+            this.secret = v
         }
     }
 }
