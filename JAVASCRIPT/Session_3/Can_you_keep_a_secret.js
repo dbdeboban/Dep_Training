@@ -4,10 +4,10 @@
 function createSecretHolder(secret) {
     return {
         getSecret: function() {
-            return _secret;
+            return secret;
         },
         setSecret: function(v) {
-            _secret = v
+            this.secret = v
         }
     }
 }
