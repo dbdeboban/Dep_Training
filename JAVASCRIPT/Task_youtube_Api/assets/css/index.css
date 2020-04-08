@@ -3,6 +3,9 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
 }
+.hidden{
+    display:none;
+}
 
 #displayAllVid {
     display: flex;
@@ -81,18 +84,6 @@ body {
     font-size: 20px;
 }
 
-
-/*Resize the wrap to see the search bar change!*/
-
-
-/* .wrap {
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
 #displayAllVid {
     margin-top: 150px;
     text-align: center;
@@ -143,7 +134,6 @@ body {
 
 .cardDiv:hover {
     transform: scale(1.1);
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .descriptionDiv {
@@ -162,8 +152,6 @@ body {
 #youtube-logo {
     margin: 20px;
 }
-
-#epam-logo-div {}
 
 #epam-logo {
     margin: 30px;
