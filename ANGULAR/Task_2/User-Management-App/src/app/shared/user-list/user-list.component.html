@@ -1,0 +1,4 @@
+<div *ngFor="let user of userList">
+    <app-user [user] = "user" [route]="route" *ngIf="userRender(user)"></app-user>
+</div>
+

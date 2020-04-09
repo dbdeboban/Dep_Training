@@ -1,0 +1,8 @@
+<div class="user-details-div" *ngIf="user">
+    <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
+    <div [ngStyle]="{color:activeStyle()}">{{getActiveStatus()}}</div>
+    <div>Login-ID: {{user.login}}</div>
+    <div>First Name: {{user.firstName}}</div>
+    <div>Last Name: {{user.lastName}}</div>
+    <div>Age: {{user.age}}</div>
+</div>
