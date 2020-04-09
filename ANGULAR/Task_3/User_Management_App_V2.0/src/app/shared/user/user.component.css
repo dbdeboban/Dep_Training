@@ -1,0 +1,25 @@
+.user-div {
+    border: 2px solid ;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    max-width: 80%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.btn-div {
+    text-align: end;
+}
+
+.user-name {
+    font-size: 25px;
+    font-weight: 400;
+
+}
+.border-style-red{
+    border: 2px solid rgb(255, 39, 39);
+}
+.border-style-green{
+    border: 2px solid rgb(153, 255, 0);
+}
