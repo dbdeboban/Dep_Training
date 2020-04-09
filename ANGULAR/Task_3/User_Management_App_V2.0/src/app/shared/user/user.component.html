@@ -1,0 +1,20 @@
+<div class="user-div border-style-green" *ngIf="displayOnlyActive()">
+  <div class="user-name">{{user | fullName }}</div>
+  <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked(user);">Deactivate</button></div>
+</div>
+
+<div class="user-div border-style-red"
+  *ngIf="displayOnlyDeleted()">
+  <div class="user-name">{{user | fullName }}</div>
+  <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked(user)">Activate</button></div>
+</div>
+
+<div class="user-div"
+  [ngClass]="borderStyle"
+  *ngIf="displayOnlyManage()">
+  <div class="user-name">{{user | fullName }}</div>
+  <div class="btn-div d-flex justify-content-between">
+    <button class="btn btn-warning" (click)="upadateUser(user.id)">Edit</button>
+    <button class="btn btn-primary" (click)="showDetailsClicked(user.id)">Details</button>
+  </div>
+</div>
