@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/users.service';
 
@@ -8,28 +8,33 @@ import { UsersService } from 'src/app/users.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit{
 
   @Input() user:any;
   @Input() route:any;
-  @Output() deactivateEvent = new EventEmitter;
-  @Output() activateEvent = new EventEmitter;
+  borderStyle:string;
   constructor(private router: Router, private userService:UsersService) { }
-
-  ngOnInit() {
-    console.log(this.route)
-  }
 
   showDetailsClicked(id){
     this.router.navigate(['manage',id]);
   }
   deactivateButtonClicked(){
-    console.log(this.user)
     this.user.isDeleted=true;
   }
   activateButtonClicked(){
-    console.log(this.user)
     this.user.isDeleted=false;
+  }
+  renderIfActive(){
+    return (this.route=='active' && !this.user.isDeleted)?true:false;
+  }
+  renderIfDeleted(){
+    return (this.route=='deleted' && this.user.isDeleted)?true:false;
+  }
+  renderIfManage(){
+    return (this.route=='manage')?true:false;
+  }
+  ngOnInit(){
+    this.borderStyle=this.user.isDeleted?'border-style-red':'border-style-green';
   }
 }
 

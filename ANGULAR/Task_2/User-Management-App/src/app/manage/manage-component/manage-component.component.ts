@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/users.service';
 
@@ -8,13 +8,8 @@ import { UsersService } from 'src/app/users.service';
   templateUrl: './manage-component.component.html',
   styleUrls: ['./manage-component.component.css']
 })
-export class ManageComponentComponent implements OnInit {
+export class ManageComponentComponent{
 
   routeSnap='manage';
-  constructor(private route : ActivatedRoute,private userService : UsersService, private router : Router) { }
-
-  ngOnInit() {
-  }
-
-  
+  constructor(private route : ActivatedRoute,private userService : UsersService, private router : Router) { }  
 }

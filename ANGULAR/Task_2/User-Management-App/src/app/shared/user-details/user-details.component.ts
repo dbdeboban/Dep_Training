@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(private userService:UsersService, private route:ActivatedRoute,) { }
 
   ngOnInit() {
-    this.paramsId = +this.route.snapshot.params['id'];
+    this.paramsId = +this.route.snapshot.params['id'] || 0;
     this.user = this.userService.find(this.paramsId);
 
     this.route.params.subscribe(
@@ -22,6 +22,12 @@ export class UserDetailsComponent implements OnInit {
         this.user = this.userService.find(<Number>param['id']);
       }
     );
+  }
+  activeStyle(){
+   return this.user.isDeleted ? 'red': 'green';
+  }
+  getActiveStatus(){
+    return this.user.isDeleted ? 'Deactive': 'Active';
   }
 
 }
