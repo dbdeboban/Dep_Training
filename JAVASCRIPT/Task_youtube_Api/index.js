@@ -43,7 +43,7 @@ let firstCall = 0;
     epamLogo.setAttribute("class", "li");
     epamLogo.setAttribute("id", "epam-logo-div");
     let epamLogoImage = document.createElement("img");
-    epamLogoImage.setAttribute("src", "../assets/img/epam-systems-logo.jpg");
+    epamLogoImage.setAttribute("src", "./assets/img/epam-systems-logo.jpg");
     epamLogoImage.setAttribute("class", "logo");
     epamLogoImage.setAttribute("id", "epam-logo");
     epamLogo.append(epamLogoImage);
@@ -88,20 +88,19 @@ let firstCall = 0;
 })();
 
 let hideShowTests = function() {
-    let flag = 1;
+    let flag = true;
 
     return function() {
         let btn = document.getElementById("testShowHideBtn");
         let testDiv = document.getElementsByClassName("jasmine_html-reporter")[0];
-        console.log(flag);
         if (flag) {
             btn.innerHTML = "Show Test Results";
-            flag = 0;
-            testDiv.setAttribute("style", "display:none;");
+            flag = false;
+            testDiv.classList.add('hidden')
         } else {
             btn.innerHTML = "Hide Test Results";
-            flag = 1;
-            testDiv.setAttribute("style", "display:block;");
+            flag = true;
+            testDiv.classList.remove('hidden');
         }
     };
 }();
@@ -153,10 +152,8 @@ function searchBoxSubmit(urls) {
         if (urls == undefined) {
             firstCall = 1;
             counter++;
-            console.log('yes');
 
             url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBWLFBi-JmwYv2JnqUsrcDd4vKQYct2vdg&type=video&part=snippet&&maxResults=15&q=${searchBox.value}`;
-            console.log(url);
         } else {
             url = urls;
         }
@@ -175,7 +172,6 @@ function fetchData(url) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             displayData(data);
         });
 }
