@@ -1,16 +1,16 @@
-<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="displayOnlyActive()">
+<div class="user-div border-style-green" *ngIf="displayOnlyActive()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked(user);">Deactivate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': borderStyle()}"
+<div class="user-div border-style-red"
   *ngIf="displayOnlyDeleted()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked(user)">Activate</button></div>
 </div>
 
 <div class="user-div"
-  [ngStyle]="{'border': borderStyle()}"
+  [ngClass]="borderStyle"
   *ngIf="displayOnlyManage()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div d-flex justify-content-between">

@@ -10,11 +10,14 @@ import { FullNamePipe } from '../full-name.pipe';
   styleUrls: ['./user.component.css'],
   providers:[FullNamePipe]
 })
-export class UserComponent{
+export class UserComponent {
 
   @Input() user:any;
   @Input() route:any;
-  constructor(private router: Router, private userService:UsersService) { }
+  borderStyle:string;
+  constructor(private router: Router, private userService:UsersService) {
+    this.borderStyle=this.user.isDeleted? '1px solid rgba(255, 48, 48,0.75)':'1px solid rgb(0, 214, 0)';
+   }
 
   showDetailsClicked(id){
     this.router.navigate(['manage',id]);
@@ -29,9 +32,6 @@ export class UserComponent{
   activateButtonClicked(user){
     user.isDeleted = false;
     this.userService.updateUser(user).subscribe();
-  }
-  borderStyle(){
-    return this.user.isDeleted? '1px solid rgba(255, 48, 48,0.75)':'1px solid rgb(0, 214, 0)';
   }
   displayOnlyActive(){
     return (this.route=='active' && !this.user.isDeleted)?true:false;

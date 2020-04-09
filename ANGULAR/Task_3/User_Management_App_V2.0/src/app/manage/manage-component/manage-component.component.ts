@@ -13,7 +13,7 @@ export class ManageComponentComponent{
 
   constructor(private route : ActivatedRoute,private userService : UsersService, private router : Router) { }
 
-  showCreteForm(){
+  showCreateForm(){
     this.router.navigate(['manage/create']);
   }
 }
