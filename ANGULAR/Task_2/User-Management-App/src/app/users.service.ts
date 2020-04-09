@@ -25,9 +25,6 @@ export class UsersService {
   find(id) {
     return this.users[id - 1];
   }
-  // userClicked(user: User){
-  //   this.find()
-  // }
   constructor() { }
 }
 

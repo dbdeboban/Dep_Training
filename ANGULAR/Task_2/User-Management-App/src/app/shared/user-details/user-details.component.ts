@@ -23,5 +23,11 @@ export class UserDetailsComponent implements OnInit {
       }
     );
   }
+  activeStyle(){
+   return this.user.isDeleted ? 'red': 'green';
+  }
+  getActiveStatus(){
+    return this.user.isDeleted ? 'Deactive': 'Active';
+  }
 
 }

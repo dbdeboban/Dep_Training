@@ -1,15 +1,14 @@
-
-<div class="user-div" [ngStyle]="{'border': '2px solid green'}" *ngIf="route=='active' && !user.isDeleted">
-    <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
-    <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked();deactivateEvent.emit();">Deactivate</button></div>
+<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIfActive()">
+  <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
+  <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked();">Deactivate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': '2px solid red'}" *ngIf="route=='deleted' && user.isDeleted">
-    <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
-    <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked();activateEvent.emit();">Activate</button></div>
+<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIfDeleted()">
+  <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
+  <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked();">Activate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': user.isDeleted?'2px solid red':'2px solid green'}" *ngIf="route =='manage'">
-    <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
-    <div class="btn-div"><button class="btn btn-primary" (click)="showDetailsClicked(user.id)">Show Details</button></div>
+<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIf Manage()">
+  <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
+  <div class="btn-div"><button class="btn btn-primary" (click)="showDetailsClicked(user.id)">Show Details</button></div>
 </div>

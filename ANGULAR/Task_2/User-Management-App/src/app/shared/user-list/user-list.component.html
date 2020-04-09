@@ -1,4 +1,4 @@
 <div *ngFor="let user of userList">
-    <app-user [user] = "user" [route]="route" *ngIf="(route === 'active' && !user.isDeleted)||(route === 'deleted' && user.isDeleted)||(route == 'manage')"></app-user>
+    <app-user [user] = "user" [route]="route" *ngIf="userRender(user)"></app-user>
 </div>
 
