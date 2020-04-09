@@ -61,7 +61,6 @@ export class UpdateFormComponent implements OnInit {
     if (this.form.valid) {
       this.userService.updateUser(this.user).subscribe(
         (result) => {
-          console.log('Result: Create User API - ', result);
           this.router.navigate([`manage/${result['id']}`]);
         },
         (error) => {
