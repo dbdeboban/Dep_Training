@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DeletedComponentComponent } from './deleted-component/deleted-component.component';
 
 
-
 @NgModule({
   declarations: [DeletedComponentComponent],
   imports: [

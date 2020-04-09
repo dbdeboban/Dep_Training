@@ -15,10 +15,7 @@ const routes: Routes = [
             (file) => file.ManageModule
         )
     }
-    // {
-    //     path:'manage',
-    //     loadChildren:'./manage/'
-    // }
+    
 ];
 
 @NgModule({

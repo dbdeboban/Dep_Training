@@ -8,7 +8,13 @@
     font-family: calibri;
     font-size: large;
 }
-
+hr{
+    width: 90%; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    border: none;
+    border-top: 1px solid gainsboro;
+}
 div {
     margin-bottom: 5px;
 }

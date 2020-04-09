@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/users.service';
 import { FullNamePipe } from '../full-name.pipe';
@@ -10,15 +10,11 @@ import { FullNamePipe } from '../full-name.pipe';
   styleUrls: ['./user.component.css'],
   providers:[FullNamePipe]
 })
-export class UserComponent implements OnInit {
+export class UserComponent{
 
   @Input() user:any;
   @Input() route:any;
   constructor(private router: Router, private userService:UsersService) { }
-
-  ngOnInit() {
-    console.log(this.route)
-  }
 
   showDetailsClicked(id){
     this.router.navigate(['manage',id]);
@@ -33,6 +29,18 @@ export class UserComponent implements OnInit {
   activateButtonClicked(user){
     user.isDeleted = false;
     this.userService.updateUser(user).subscribe();
+  }
+  borderStyle(){
+    return this.user.isDeleted? '1px solid rgba(255, 48, 48,0.75)':'1px solid rgb(0, 214, 0)';
+  }
+  displayOnlyActive(){
+    return (this.route=='active' && !this.user.isDeleted)?true:false;
+  }
+  displayOnlyDeleted(){
+    return (this.route=='deleted' && this.user.isDeleted)?true:false;
+  }
+  displayOnlyManage(){
+    return (this.route=='manage')?true:false;
   }
 }
 

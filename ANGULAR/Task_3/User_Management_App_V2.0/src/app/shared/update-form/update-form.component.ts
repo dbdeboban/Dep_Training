@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/users.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AppSettings } from 'CONSTANT';
 
 @Component({
   selector: 'app-update-form',
@@ -12,23 +13,26 @@ export class UpdateFormComponent implements OnInit {
   user:any;
   paramsId:any;
   form = new FormGroup({
-    age: new FormControl(),
+    age: new FormControl('',Validators.required),
     password: new FormControl('', [Validators.required, Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)])
   });
+  AgeError: string;
+  PasswordError: string;
 
-  constructor(private userService: UsersService, private router: Router, private route:ActivatedRoute) { }
+  constructor(private userService: UsersService, private router: Router, private route:ActivatedRoute) {
+    this.AgeError=AppSettings.AGE_ERROR;
+    this.PasswordError=AppSettings.PASSWORD_ERROR;
+   }
 
   ngOnInit() {
     this.paramsId = this.route.snapshot.params['id'];
     this.user = this.userService.getUser(this.paramsId);
-    console.log(this.user);
 
     this.route.params.subscribe(
       (param) => {
         this.userService.getUser(param['id']).subscribe(
           (result) => {
             this.user = result;
-            console.log('Result: Get User API - ', result);
           },
           (error) => {
             console.log('Error: Get User API - ', error);
@@ -44,6 +48,12 @@ export class UpdateFormComponent implements OnInit {
   }
   get password(){
     return this.form.get('password');
+  }
+  passwordError(){
+    return this.password.touched? this.password.invalid?true:false :false;
+  }
+  ageError(){
+    return this.age.touched? this.age.invalid?true:false :false;
   }
   updateUser() {
     this.user.age = this.form.value.age;

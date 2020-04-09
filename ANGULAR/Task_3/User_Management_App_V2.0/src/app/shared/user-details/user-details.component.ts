@@ -19,7 +19,6 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit():void {
     this.paramsId = this.route.snapshot.params['id'];
     this.user = this.userService.getUser(this.paramsId);
-    console.log(this.user);
 
     this.route.params.subscribe(
       (param) => {
@@ -36,6 +35,10 @@ export class UserDetailsComponent implements OnInit {
           }
         );
       });
+    }
+
+    activeStatus(){
+      return this.user.isDeleted?'red':'rgb(0, 214, 0)'
     }
 
 }

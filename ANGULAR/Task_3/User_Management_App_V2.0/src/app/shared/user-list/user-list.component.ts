@@ -14,7 +14,9 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() :void{
     this.userList = this.userService.getUsers();
-    console.log(this.userList);
+  }
+  userRender(user){
+    return ((this.route === 'active' && !user.isDeleted)||(this.route === 'deleted' && user.isDeleted)||(this.route == 'manage'))?true:false;
   }
 
 }

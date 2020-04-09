@@ -16,7 +16,6 @@ const manageRoutes: Routes = [
         { path: 'update/:id', component:UpdateUserComponent}
       ]
   }
-  
 ];
 @NgModule({
   declarations: [

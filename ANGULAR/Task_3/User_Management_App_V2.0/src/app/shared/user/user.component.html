@@ -1,17 +1,17 @@
-<div class="user-div" [ngStyle]="{'border': '1px solid rgb(0, 214, 0)'}" *ngIf="route=='active' && !user.isDeleted">
+<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="displayOnlyActive()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked(user);">Deactivate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': '1px solid rgba(255, 48, 48,0.75)'}"
-  *ngIf="route=='deleted' && user.isDeleted">
+<div class="user-div" [ngStyle]="{'border': borderStyle()}"
+  *ngIf="displayOnlyDeleted()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked(user)">Activate</button></div>
 </div>
 
 <div class="user-div"
-  [ngStyle]="{'border': user.isDeleted?'1px solid rgba(255, 48, 48,0.75)':'1px solid rgb(0, 214, 0)'}"
-  *ngIf="route =='manage'">
+  [ngStyle]="{'border': borderStyle()}"
+  *ngIf="displayOnlyManage()">
   <div class="user-name">{{user | fullName }}</div>
   <div class="btn-div d-flex justify-content-between">
     <button class="btn btn-warning" (click)="upadateUser(user.id)">Edit</button>
