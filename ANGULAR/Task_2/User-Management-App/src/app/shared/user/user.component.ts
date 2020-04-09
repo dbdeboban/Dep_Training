@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/users.service';
 
@@ -8,10 +8,11 @@ import { UsersService } from 'src/app/users.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent{
+export class UserComponent implements OnInit{
 
   @Input() user:any;
   @Input() route:any;
+  borderStyle:string;
   constructor(private router: Router, private userService:UsersService) { }
 
   showDetailsClicked(id){
@@ -23,9 +24,6 @@ export class UserComponent{
   activateButtonClicked(){
     this.user.isDeleted=false;
   }
-  borderStyle(){
-    return this.user.isDeleted?'2px solid red':'2px solid green';
-  }
   renderIfActive(){
     return (this.route=='active' && !this.user.isDeleted)?true:false;
   }
@@ -34,6 +32,9 @@ export class UserComponent{
   }
   renderIfManage(){
     return (this.route=='manage')?true:false;
+  }
+  ngOnInit(){
+    this.borderStyle=this.user.isDeleted?'border-style-red':'border-style-green';
   }
 }
 

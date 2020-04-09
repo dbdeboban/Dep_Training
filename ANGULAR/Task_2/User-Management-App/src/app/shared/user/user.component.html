@@ -1,14 +1,14 @@
-<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIfActive()">
+<div class="user-div border-style-green" *ngIf="renderIfActive()">
   <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
   <div class="btn-div"><button class="btn btn-danger" (click)="deactivateButtonClicked();">Deactivate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIfDeleted()">
+<div class="user-div border-style-red" *ngIf="renderIfDeleted()">
   <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
   <div class="btn-div"><button class="btn btn-success" (click)="activateButtonClicked();">Activate</button></div>
 </div>
 
-<div class="user-div" [ngStyle]="{'border': borderStyle()}" *ngIf="renderIf Manage()">
+<div class="user-div" [ngClass]="borderStyle" *ngIf="renderIfManage()">
   <div class="user-name">{{user.firstName}} {{user.lastName}}</div>
   <div class="btn-div"><button class="btn btn-primary" (click)="showDetailsClicked(user.id)">Show Details</button></div>
 </div>
