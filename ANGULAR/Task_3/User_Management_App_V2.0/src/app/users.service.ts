@@ -16,14 +16,14 @@ interface User {
   providedIn: 'root'
 })
 export class UsersService {
-  
+
   constructor(private http:HttpClient) { }
   getUsers() {
-     return this.http.get<any[]>('http://localhost:8080/users');
+     return this.http.get<User[]>('http://localhost:8080/users');
   }
 
   getUser(id: string) {
-    return this.http.get('http://localhost:8080/users/'+ id);
+    return this.http.get<User>('http://localhost:8080/users/'+ id);
   }
 
   createUser(user: User) {

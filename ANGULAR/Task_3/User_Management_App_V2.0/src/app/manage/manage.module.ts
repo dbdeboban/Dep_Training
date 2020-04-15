@@ -16,13 +16,14 @@ const manageRoutes: Routes = [
         { path: 'update/:id', component:UpdateUserComponent}
       ]
   }
+  
 ];
 @NgModule({
   declarations: [
     ManageComponentComponent,
     ManageUserDetailsComponent,
     ManageCreateUserComponent,
-    UpdateUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +31,7 @@ const manageRoutes: Routes = [
     RouterModule.forChild(manageRoutes)
   ],
   exports:[
-    ManageComponentComponent,
+    ManageComponentComponent
   ]
 })
 export class ManageModule { }

@@ -5,18 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ActiveComponentComponent } from './active/active-component/active-component.component';
-import { DeletedComponentComponent } from './deleted/deleted-component/deleted-component.component';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ActiveComponentComponent,
-    DeletedComponentComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
