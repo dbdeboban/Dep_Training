@@ -13,7 +13,7 @@ function crawlAndOutput(dir, outputFile){
     var files = fs.readdirSync(dir);
     for( file of files){
         let next = path.join(dir,file);
-        if(fs.lstatSync(next).isDirectory() == true){
+        if(fs.lstatSync(next).isDirectory()){
             crawlAndOutput(next, outputFile);
         }
         else{
