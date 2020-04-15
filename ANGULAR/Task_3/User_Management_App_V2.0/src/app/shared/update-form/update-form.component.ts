@@ -14,7 +14,7 @@ export class UpdateFormComponent implements OnInit {
   paramsId:any;
   form = new FormGroup({
     age: new FormControl('',Validators.required),
-    password: new FormControl('', [Validators.required, Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)])
+    password: new FormControl('', [Validators.required, Validators.pattern(AppSettings.PASSWORD_PATTERN)])
   });
   AgeError: string;
   PasswordError: string;

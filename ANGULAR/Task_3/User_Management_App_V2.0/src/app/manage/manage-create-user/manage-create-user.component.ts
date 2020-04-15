@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './manage-create-user.component.html',
   styleUrls: ['./manage-create-user.component.css']
 })
-export class ManageCreateUserComponent{
-}
+export class ManageCreateUserComponent {}

@@ -8,12 +8,13 @@ import { UsersService } from 'src/app/users.service';
   templateUrl: './manage-component.component.html',
   styleUrls: ['./manage-component.component.css']
 })
-export class ManageComponentComponent{
-  routeSnap='manage';
+export class ManageComponentComponent {
 
+  routeSnap='manage';
   constructor(private route : ActivatedRoute,private userService : UsersService, private router : Router) { }
 
   showCreateForm(){
     this.router.navigate(['manage/create']);
   }
+  
 }

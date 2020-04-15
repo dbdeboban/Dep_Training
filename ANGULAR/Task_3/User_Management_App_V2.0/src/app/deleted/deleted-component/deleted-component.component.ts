@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './deleted-component.component.html',
   styleUrls: ['./deleted-component.component.css']
 })
-export class DeletedComponentComponent{
+export class DeletedComponentComponent {
   route = "deleted";
 }

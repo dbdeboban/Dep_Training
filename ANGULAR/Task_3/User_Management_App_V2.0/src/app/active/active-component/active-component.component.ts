@@ -5,6 +5,6 @@ import { Component} from '@angular/core';
   templateUrl: './active-component.component.html',
   styleUrls: ['./active-component.component.css']
 })
-export class ActiveComponentComponent{
+export class ActiveComponentComponent {
   route = "active";
 }
