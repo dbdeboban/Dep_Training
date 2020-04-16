@@ -93,12 +93,6 @@ body {
 .username-input,.password-input,.login-submit,.name-input,.email-input{
   margin-top: 20px;
 }
-/* .password-input {
-  margin-top: 20px;
-}
-.login-submit {
-  margin-top: 20px;
-} */
 #username {
   border: 0px;
   border-radius: 25px;
